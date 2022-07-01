@@ -1,3 +1,4 @@
-#  POO TS training to build an RPG minigame.
+#  POO TS RPG minigame.
 
-## Still WIP
+* TypeScript POO exercice to build a RPG style fight game
+* Still WIP
