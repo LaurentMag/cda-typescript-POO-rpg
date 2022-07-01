@@ -12,8 +12,7 @@ export class Personnage extends AbstractCombattant implements Combattant {
   }
 
   attaquer(adversaire: Combattant): void {
-    console.log(`attaque utilisé : ${this.classe.getSkillToUse().nom}`);
-    console.log(`Dégâts de:  ${this.classe.getSkillToUse().degatAtk}`);
+    console.log(this.nom, " attaque avec : ", this.classe.getSkillToUse().nom, " || Dégâts de : ", this.classe.getSkillToUse().degatAtk);
 
     // get skill to use from the classe.ts method
     let skillUsed = this.classe.getSkillToUse();

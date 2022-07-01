@@ -22,7 +22,7 @@ export abstract class AbstractCombattant implements Combattant {
 
   attaquer(adversaire: Combattant): void {
     adversaire.setDmg(this.degats);
-    console.log(`il y a eu une attaque de ${this.degats} dégâts`);
+    console.log(`${this.nom} attaque et inflige ${this.degats} dégâts`);
   }
 
   toString(): string {

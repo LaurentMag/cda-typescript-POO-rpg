@@ -11,6 +11,9 @@ export class Monde {
   //
   static personnageFactory(): Personnage {
     let persoName: string = read.question("Entrer le nom de votre personnage : ");
+    console.log("\n");
+    console.log(" -------------- Début du combat :  -------------- ");
+    console.log("\n");
 
     let guerrier: Class = new Class("guerrier", [
       new BasicAttack("coup de bouclier", 5, 60),
@@ -21,12 +24,11 @@ export class Monde {
 
     return newPerso;
   }
-  //
 
   // ---------------------------------------------------------------------------
   // ---------------------------------------------------------------------------
   public static monsterNameGenerator(): string {
-    let suffix: string[] = ["Goules", "Farfadets", "gobelin", "moustique", "Ronflex", "guivre", "ver"];
+    let suffix: string[] = ["Goules", "Farfadets", "Gobelin", "Moustique", "Ronflex", "Guivre", "Ver"];
     let prefix: string[] = ["des enfers", "de glace", "en bois", "paisible", "des sous-terrain", "des Abyss"];
 
     let monsterName = suffix[Tools.randomArrayIndex(suffix)] + " " + prefix[Tools.randomArrayIndex(prefix)];
@@ -52,12 +54,20 @@ export class Monde {
     while (combattant1.pv > 0 && combattant2.pv > 0) {
       // premier tour perso attaque mob
       combattant1.attaquer(combattant2);
-      console.log("combattant2", combattant2.pv);
+      console.log(combattant2.nom, "PV restant : ", combattant2.pv);
+
+      console.log("\n");
+      console.log(" -------------- TOUR SUIVANT  -------------- ");
+
+      // console.log("\n");
+      // read.question("Press a key for new turn : ");
+      // console.log("\n");
 
       combattant2.attaquer(combattant1);
-      console.log("combattant1", combattant1.pv);
+      console.log(combattant1.nom, "PV restant : ", combattant1.pv);
 
-      console.log("-------");
+      console.log("\n");
+      console.log(" -------------- TOUR SUIVANT  -------------- ");
 
       if (combattant1.pv <= 0) {
         console.log(`le gagant est ${combattant2.nom}, ${combattant2.pv} restant`);
