@@ -12,3 +12,5 @@ npm install
 ```
 npm run rpg
 ```
+
+licence : CC-BY-NC
